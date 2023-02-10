@@ -1,74 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Web Dev Remote Job Search & Some Shibes</title>
 </head>
 
 
-<body class="flex-column min-100-vh has-background-success-dark">
-    <header class="hero is-small is-danger">
-        <!-- <h1 class="app-title"></i>Web Dev Remote Job Search</h1> -->
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="app-title">Web Dev Remote Job Search</h1>
-                <h2 class="app-subtitle-center">The New Job of Your Future!!</h2>
-            </div>
-        </div>
+<body class="flex-column min-100-vh">
+    <header class="hero">
+        <h1 class="app-title"></i>Web Dev Remote Job Search</h1>
     </header>
-
+      
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-4">
-
-            <div class="search-card">
-                <h2 class="card-header text-lowercase">Search your next job: </h2>
-                <form id="search-form" class="search-card-body">
-                    <label class="form-label" for="jobs"></label>
-                    <input name="job-parameter" id="job-parameter" type="text" autofocus="true"
-                        class="form input is-danger" placeholder="Full-Stack" />
-                    <button type="submit" class="button is-info">Search</button>
-                </form>
-            </div>
-
-            <div class="stored-card">
-                <div id="job-buttons" class="card-body">
-                </div>
+      
+        <div class="search-card">
+            <h2 class="card-header text-lowercase">Search your next job: </h2>
+            <form id="search-form" class="search-card-body">
+            <label class="form-label" for="jobs"></label>
+            <input name="job-parameter" id="job-parameter" type="text" autofocus="true" class="form-input" placeholder="Full-Stack"/>
+            <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+      
+        <div class="stored-card">
+            <div id="job-buttons" class="card-body">
             </div>
         </div>
-
+        </div>
+      
         <div class="col-12 col-md-8">
-            <div id="jobs-container" class="jobs-group"></div>
-
-            <div id="subtitle" class="jobs-subtitle"></div>
-            <div id="job-cards" class="options-cards"></div>
+        <div id="jobs-container" class="jobs-group"></div>
+          
+        <div id="subtitle" class="jobs-subtitle"></div>
+        <div id="option-cards" class="options-cards"></div>
         </div>
 
-        <article class="message is-warning">
-            <div class="message-header">
-                <p class="has-text-dark">Shibes for Hire!</p>
-            </div>
-            <div class="message-body">
-                Like this Shiba? Click the save button to see it next time you visit!!
-            </div>
-            <div class="button is-danger">Save Your Shibes!</div>
-        </article>
-
+        <button type="button" id="button" onclick="displayShibe()">Get a Shibe!</button>
+            <img id="myimage" />
     </main>
 </body>
 
-<footer class="card-footer">
-    <p class="card-footer-item">
-        <span>
-            This Website is powered with the 💗 of Shibes!
-        </span>
-    </p>
-</footer>
-
 <script src="./assets/js/script.js"></script>
-
 </html>
