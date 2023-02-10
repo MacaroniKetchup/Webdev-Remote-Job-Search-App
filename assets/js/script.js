@@ -1,6 +1,6 @@
 var searchFormEl = document.getElementById('search-form');
 var searchJobEl = document.getElementById('job-parameter');
-// var searchShibeEl = document.getElementById("button").addEventListener("click", displayShibe());
+
 
 // function for event handler (search button) to retrieve user input
 function formSubmitHandler(event) {
@@ -63,7 +63,6 @@ function getShibe() {
         .then(function (data) {
             // console.log
             console.log("shibe-fetch", data)
-            // displayShibe(data);
         })
         return getShibe
 }
