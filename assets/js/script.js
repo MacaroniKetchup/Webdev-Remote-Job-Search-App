@@ -81,7 +81,7 @@ function displayResults(jobResults) {
 
             var titleData = jobResults.results[i].name;
             jobTitle.innerHTML = 'Job Title: ' + titleData;
-            jobTitle.classList.add('message-header', 'has-background-is-warning', 'has-text-dark')
+            jobTitle.classList.add('message-header', 'has-background-is-warning', 'has-text-warning-dark')
 
             var companyData = jobResults.results[i].company.name;
             jobCompany.innerHTML = 'Company: ' + companyData;
@@ -174,7 +174,7 @@ function storeSearch(resultsList) {
         for (var i = 0; i < localStorage.length; i++) {
             var searchButton = document.createElement('a');
             searchButton.textContent = localStorage.key(i);
-            searchButton.classList.add('btn');
+            searchButton.classList.add('btn', 'message-body', 'py-0', 'has-background-warning', 'has-text-warning-dark');
             jobButtonsEl.appendChild(searchButton);
             jobButtonsEl.addEventListener('click', storedSearchHandler);
         }
