@@ -6,11 +6,7 @@ var jobButtonsEl = document.getElementById('job-buttons');
 var storedCardEl = document.getElementById('stored-card');
 var previousSearches = document.getElementById('previous-searches');
 var searchCategory;
-// var shibePrintEl = document.getElementById('print-shibes');
 
-// var api = 'https://www.themuse.com/api/public/jobs?q=';
-// var jobSearch = "";
-// var pageLoad = '&page=1&descending=true';
 // var apiKey = "daed771fd0ad16dbb3a9de8575ba1b7d7160d8d32ea4d206975cbbe4464934ce";
 var apiKey1 = "&api_key=0baa9fe5f5bebece6a9a3c670885ad97f3625e18b3148bb62e59c4df39a2780a";
 
@@ -91,39 +87,39 @@ function displayResults(jobResults) {
 
             var companyData = jobResults.results[i].company.name;
             jobCompany.innerHTML = 'Company: ' + companyData;
-            jobCompany.classList.add('message-body', 'pb-0', 'pt-3', 'has-background-warning-light', 'has-text-warning-dark')
+            jobCompany.classList.add('message-body', 'pb-2', 'pt-3', 'has-background-warning-light', 'has-text-warning-dark')
 
             var newDate = new Date(jobResults.results[i].publication_date);
             jobDate.innerHTML = 'Posting Date: ' + newDate.toLocaleDateString();
-            jobDate.classList.add('message-body', 'py-0', 'has-background-warning-light', 'has-text-warning-dark')
+            jobDate.classList.add('message-body', 'py-2', 'has-background-warning-light', 'has-text-warning-dark')
 
             var categoryData = jobResults.results[i].categories[0].name;
             for (var j = 1; j < jobResults.results[i].categories.length; j++) {
                 categoryData = categoryData + ', ' + jobResults.results[i].categories[j].name;
             }
             jobCategory.innerHTML = 'Job Category: ' + categoryData;
-            jobCategory.classList.add('message-body', 'py-0', 'has-background-warning-light', 'has-text-warning-dark')
+            jobCategory.classList.add('message-body', 'py-2', 'has-background-warning-light', 'has-text-warning-dark')
 
             var levelData = jobResults.results[i].levels[0].name;
             jobLevel.innerHTML = 'Level: ' + levelData;
-            jobLevel.classList.add('message-body', 'py-0', 'has-background-warning-light', 'has-text-warning-dark')
+            jobLevel.classList.add('message-body', 'py-2', 'has-background-warning-light', 'has-text-warning-dark')
 
             var descriptionData = jobResults.results[i].contents;
             jobDescription.innerHTML = 'Job Description: ' + descriptionData;
             jobDescription.setAttribute('id', "longDesc" + i);
             jobDescription.setAttribute("hidden", true);
-            jobDescription.classList.add('message-body', 'py-0', 'has-background-warning-light', 'has-text-warning-dark')
+            jobDescription.classList.add('message-body', 'py-2', 'has-background-warning-light', 'has-text-warning-dark')
 
             var shortDescriptionData = jobResults.results[i].contents;
             truncatedDescription.innerHTML = 'Job Description: ' + shortDescriptionData.substring(0, 200);
-            truncatedDescription.classList.add('message-body', 'py-0', 'has-background-warning-light', 'has-text-warning-dark')
+            truncatedDescription.classList.add('message-body', 'py-2', 'has-background-warning-light', 'has-text-warning-dark')
             truncatedDescription.setAttribute('id', "shortDesc" + i);
 
 
             var showMore = document.createElement('a');
             showMore.setAttribute('id', "toggleButton" + i);
             showMore.innerText = 'Show more ...';
-            showMore.classList.add('message-body', 'py-0', 'has-text-danger-dark')
+            showMore.classList.add('message-body', 'py-2', 'has-text-danger-dark')
 
             resultsList.append(jobTitle, jobCompany, jobDate, jobCategory, jobLevel, jobDescription, truncatedDescription, showMore);
 
@@ -265,21 +261,6 @@ shibeBtn.on("click", function () {
     savedShibeImg.src = "data:image/png;base64," + dataImage;
 
 })
-
-// function displayShibe(data) {
-//     console.log("displaying shibe")
-//     console.log(data)
-//     var print = new XMLHttpRequest();
-//     print.onclick = function(event) {
-//         console.log(event)
-//         if (true) {
-//             var data = JSON.parse(this.responseText);
-//             // data.results[0].picture.large;
-//         }
-//         print.open("GET", getShibe());
-//         return getShibe();
-//     }
-// }
 
 // event listener
 searchFormEl.addEventListener('submit', formSubmitHandler);
